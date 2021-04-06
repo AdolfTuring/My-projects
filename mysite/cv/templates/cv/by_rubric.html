@@ -1,0 +1,14 @@
+{% extends "layout/basic.html" %}
+{% block title %} {{current_rubric.name}}{% endblock%}
+{% block content %}
+<h2>Fact about: {{current_rubric.name}}</h2>
+    
+{% for bb in bbs %}
+<div>
+    <h2>{{bb.fact}}</h2>
+    <p>{{bb.content}}</p>
+    <p>Level 0\50: {{bb.level}}</p>
+    <p>{{bb.publised|date:"d.m.Y H:i:s"}}</p>
+</div>
+{% endfor %}
+{% endblock %}

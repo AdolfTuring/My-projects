@@ -1,0 +1,17 @@
+{% extends "layout/basic.html" %}
+{% block content %}
+<h1>Hi</h1>
+<p>It's my project on Django web framework.</p>
+<p>On this site you can see facts about me. Facts about my skills, experience and life. Of course you can add some facts for a test.</p>
+<p>In this project i use Django, SQLite, some HTML and CSS.</p>
+{% for bb in bbs %}
+    <div>
+        <h2>{{bb.fact}}</h2>
+        <p>{{bb.content}}</p>
+        <p><a href='/cv/{{bb.rubric.pk}}/'>{{bb.rubric.name}}</a></p>
+        <p>{{bb.publised|date:"d.m.Y H:i:s"}}</p>
+        
+    </div>
+{% endfor %}
+{% endblock %}
+

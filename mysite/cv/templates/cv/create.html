@@ -1,0 +1,10 @@
+{% extends "layout/basic.html" %}
+{% block title %} Add fact {% endblock%}
+{% block content %}
+<h2>Add Fact</h2>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Add"
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">
+        <link rel='stylesheet' type='text/css' href="{% static 'cv/style.css' %}">
+        <title>{% block title %}Main{% endblock %}</title>
+    </head>
+    <body>
+        <header>My CV</header>
+        
+        <nav>
+            <a href="{% url 'index' %}">Main</a>
+            <a href="{% url 'add' %}">Add</a>
+            {% for rubric in rubrics %}
+            <a href="{% url 'by_rubric' rubric.pk %}">{{rubric.name}}</a>
+            {% endfor %}
+        </nav>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </body>
